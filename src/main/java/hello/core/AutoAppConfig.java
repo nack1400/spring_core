@@ -1,5 +1,8 @@
 package hello.core;
 
+import hello.core.member.MemberRepository;
+import hello.core.member.MemoryMemberRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -13,5 +16,10 @@ import org.springframework.context.annotation.FilterType;
         excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 ) //실무에선 지우지 않으나 기존의 예제 코드때메 하는 것
 public class AutoAppConfig {
+
+  @Bean(name = "memoryMemberRepository")
+  public MemberRepository memberRepository() {
+    return new MemoryMemberRepository();
+  }
 
 }
