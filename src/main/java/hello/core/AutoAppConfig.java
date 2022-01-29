@@ -17,9 +17,9 @@ import org.springframework.context.annotation.FilterType;
 ) //실무에선 지우지 않으나 기존의 예제 코드때메 하는 것
 public class AutoAppConfig {
 
-  @Bean(name = "memoryMemberRepository")
+  /*@Bean(name = "memoryMemberRepository")
   public MemberRepository memberRepository() {
     return new MemoryMemberRepository();
   }
-
+*/
 }
